@@ -4173,6 +4173,7 @@ button.mfp-arrow {
 .footer-explore-list li a:hover {
   padding-left: 15px;
   color: #aa8453;
+  cursor: pointer;
 }
 .footer-explore-list li a:before {
   position: absolute;
