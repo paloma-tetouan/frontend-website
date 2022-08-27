@@ -30,7 +30,7 @@
 ------------------------------------------------------- */
 $(function () {
     "use strict";
-    var wind = $(window);
+    let wind = $(window);
     
     
     // ScrollIt
@@ -47,7 +47,7 @@ $(function () {
     
     // Navbar scrolling background
     wind.on("scroll", function () {
-        var bodyScroll = wind.scrollTop(),
+        let bodyScroll = wind.scrollTop(),
             navbar = $(".navbar"),
             logo = $(".navbar .logo> img");
         if (bodyScroll > 100) {
@@ -76,17 +76,17 @@ $(function () {
 
     
     // Animations
-    var contentWayPoint = function () {
-        var i = 0;
+    let contentWayPoint = function () {
+        let i = 0;
         $('.animate-box').waypoint(function (direction) {
             if (direction === 'down' && !$(this.element).hasClass('animated')) {
                 i++;
                 $(this.element).addClass('item-animate');
                 setTimeout(function () {
                     $('body .animate-box.item-animate').each(function (k) {
-                        var el = $(this);
+                        let el = $(this);
                         setTimeout(function () {
-                            var effect = el.data('animate-effect');
+                            let effect = el.data('animate-effect');
                             if (effect === 'fadeIn') {
                                 el.addClass('fadeIn animated');
                             } else if (effect === 'fadeInLeft') {
@@ -358,7 +358,7 @@ $(function () {
     // Restaurant Menu Tabs
     $(".restaurant-menu .tabs-icon").on("click", ".item", function () {
         $(".item").removeClass("active");
-        var myID = $(this).attr("id");
+        let myID = $(this).attr("id");
         $(".restaurant-menu .cont").hide();
         $("#" + myID + "-content").fadeIn();
     });
@@ -371,8 +371,8 @@ $(function () {
     // Accordion Box (for Faqs)
     if ($(".accordion-box").length) {
         $(".accordion-box").on("click", ".acc-btn", function () {
-            var outerBox = $(this).parents(".accordion-box");
-            var target = $(this).parents(".accordion");
+            let outerBox = $(this).parents(".accordion-box");
+            let target = $(this).parents(".accordion");
             if ($(this).next(".acc-content").is(":visible")) {
                 //return false;
                 $(this).removeClass("active");
@@ -425,7 +425,7 @@ $(function () {
         // On-page links
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             // Figure out element to scroll to
-            var target = $(this.hash);
+            let target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             // Does a scroll target exist?
             if (target.length) {
@@ -436,7 +436,7 @@ $(function () {
                 }, 1000, function () {
                     // Callback after animation
                     // Must change focus!
-                    var $target = $(target);
+                    let $target = $(target);
                     $target.focus();
                     if ($target.is(":focus")) { // Checking if the target was focused
                         return false;
@@ -450,23 +450,23 @@ $(function () {
     });
     
     //  Scroll back to top
-    var progressPath = document.querySelector('.progress-wrap path');
-    var pathLength = progressPath.getTotalLength();
+    let progressPath = document.querySelector('.progress-wrap path');
+    let pathLength = progressPath.getTotalLength();
     progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
     progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
     progressPath.style.strokeDashoffset = pathLength;
     progressPath.getBoundingClientRect();
     progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-    var updateProgress = function () {
-        var scroll = $(window).scrollTop();
-        var height = $(document).height() - $(window).height();
-        var progress = pathLength - (scroll * pathLength / height);
+    let updateProgress = function () {
+        const scroll = $(window).scrollTop();
+        const height = $(document).height() - $(window).height();
+        const progress = pathLength - (scroll * pathLength / height);
         progressPath.style.strokeDashoffset = progress;
     }
     updateProgress();
     $(window).scroll(updateProgress);
-    var offset = 150;
-    var duration = 550;
+    const offset = 150;
+    const duration = 550;
     jQuery(window).on('scroll', function () {
         if (jQuery(this).scrollTop() > offset) {
             jQuery('.progress-wrap').addClass('active-progress');
@@ -499,7 +499,7 @@ $(function () {
 
 // Slider  
 $(document).ready(function () {
-    var owl = $('.header .owl-carousel');
+    const owl = $('.header .owl-carousel');
     
     // Slider owlCarousel - (Inner Page Slider)
     $('.slider .owl-carousel').owlCarousel({
@@ -550,7 +550,7 @@ $(document).ready(function () {
         }
     });
     owl.on('changed.owl.carousel', function (event) {
-        var item = event.item.index - 2; // Position of the current item
+        const item = event.item.index - 2; // Position of the current item
         $('span').removeClass('animated fadeInUp');
         $('h4').removeClass('animated fadeInUp');
         $('h1').removeClass('animated fadeInUp');
@@ -570,11 +570,11 @@ $(document).ready(function () {
 // Preloader
 $("#preloader").fadeOut(700);
 	$(".preloader-bg").delay(700).fadeOut(700);
-	var wind = $(window);
+	let wind = $(window);
 
 
 // Contact Form
-var form = $('.contact__form'),
+let form = $('.contact__form'),
     message = $('.contact__msg'),
     form_data;
     // success function
