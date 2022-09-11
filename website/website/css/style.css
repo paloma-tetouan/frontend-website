@@ -892,7 +892,9 @@ color: #aa8453;
 }
 .logo-wrapper {
     float: left;
+    height: 70px;
 }
+
 .logo-wrapper .logo h2 {
     font-family: 'Gilda Display', serif;
     font-size: 24px;
